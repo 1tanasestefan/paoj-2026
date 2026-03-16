@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // === a) Unchecked — NullPointerException & finally ===
+
         System.out.println("=== a) Unchecked — NullPointerException ===");
         try {
             riskyMethod();
@@ -16,7 +16,7 @@ public class Main {
             System.out.println("Finally se execută mereu!");
         }
 
-        // === b) Custom exceptions ===
+
         System.out.println("\n=== b) Custom exceptions ===");
         try {
             validateAge(-5);
@@ -31,7 +31,7 @@ public class Main {
             System.out.println("DuplicateEntryException: " + e.getMessage());
         }
 
-        // === c) Multi-catch ===
+
         System.out.println("\n=== c) Multi-catch ===");
         try {
             validateAge(200);
@@ -39,7 +39,6 @@ public class Main {
             System.out.println("Excepție prinsă: " + e.getMessage());
         }
 
-        // === d) Catch ordering (specific → general) ===
         System.out.println("\n=== d) Catch ordering (specific → general) ===");
         try {
             validateAge(-1);
@@ -49,7 +48,7 @@ public class Main {
             System.out.println("RuntimeException generală prinsă: " + e.getMessage());
         }
 
-        // === e) Throw vs throws ===
+
         System.out.println("\n=== e) Throw vs throws ===");
         try {
             process(999);
@@ -58,13 +57,11 @@ public class Main {
         }
     }
 
-    // Metoda pentru punctul a
     public static void riskyMethod() {
         String s = null;
-        s.length(); // Aruncă NullPointerException
+        s.length();
     }
 
-    // Metode pentru punctul b
     public static void validateAge(int age) {
         if (age < 0 || age > 150) {
             throw new InvalidAgeException("Vârsta " + age + " nu este validă (0-150)");
@@ -78,7 +75,6 @@ public class Main {
         list.add(name);
     }
 
-    // Metoda pentru punctul e
     public static void process(int age) throws InvalidAgeException {
         validateAge(age);
     }

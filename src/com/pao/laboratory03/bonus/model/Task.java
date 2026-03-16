@@ -12,7 +12,6 @@ public class Task {
         this.status = Status.TODO;
     }
 
-    // Getteri și Setteri
     public String getId() { return id; }
     public Status getStatus() { return status; }
     public void setStatus(Status status) { this.status = status; }

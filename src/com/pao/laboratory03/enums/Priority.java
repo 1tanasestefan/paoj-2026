@@ -21,7 +21,6 @@ public enum Priority {
     private final int level;
     private final String color;
 
-    // Constructorul este privat implicit pentru enum-uri
     Priority(int level, String color) {
         this.level = level;
         this.color = color;
@@ -30,6 +29,5 @@ public enum Priority {
     public int getLevel() { return level; }
     public String getColor() { return color; }
 
-    // Metoda abstractă pe care fiecare constantă trebuie să o implementeze
     public abstract String getEmoji();
 }
